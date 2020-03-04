@@ -35,3 +35,9 @@ spring:
   profiles: pro
 server:
   port: 8082
+---
+#测试环境配置
+spring:
+  profiles: test
+server:
+  port: 8088
