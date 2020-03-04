@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @Value(value = "${testCase.name},${testCase.code}")
+    @Value(value = "${logging.config},${debug}")
     private String appName;
 
     @RequestMapping(value = "/hello")

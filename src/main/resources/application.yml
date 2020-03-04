@@ -14,11 +14,6 @@ spring:
 #默认启动debug模式
 debug: true
 
-
-#测试用例
-testCase:
- name: "*.html \n *.css"
- code: 234
 logging:
   config: classpath:logback-dev.xml
   #root: debug
