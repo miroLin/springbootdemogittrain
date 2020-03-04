@@ -1,0 +1,42 @@
+#服务器会话超时时间
+server:
+  servlet: 
+    session: 
+      timeout: 30m
+
+#运用名称
+spring: 
+  application: 
+    name: springBoot_demo
+  output:
+    ansi:
+      enabled: always
+#默认启动debug模式
+debug: true
+
+
+#测试用例
+testCase:
+ name: "*.html \n *.css"
+ code: 234
+logging:
+  config: classpath:logback-dev.xml
+  #root: debug
+
+---
+spring:
+  profiles:
+  #激活开发环境
+    active: dev
+---
+#开发环境配置
+spring:
+  profiles: dev
+server:
+  port: 8080
+---
+#生产环境配置
+spring:
+  profiles: pro
+server:
+  port: 8082
