@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon"/>
+    <title>Title</title>
+</head>
+<body>
+<h4>查询</h4>
+<form th:action="@{/show}" method="get" >
+    <input type="text" name="id" placeholder="用户ID" />
+    <input type="submit" value="查询" />
+</form>
+</body>
+</html>

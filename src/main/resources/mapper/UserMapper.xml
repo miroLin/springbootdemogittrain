@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.linmr.springboot.mapper.UserDao">
+    <!-- 结果集映射处理-->
+    <resultMap id="User" type="com.linmr.springboot.entity.User">
+        <result column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+    </resultMap>
+
+    <select id="listUsers" resultMap="User">
+      select * from user;
+    </select>
+</mapper>

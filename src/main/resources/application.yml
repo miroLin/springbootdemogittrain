@@ -3,6 +3,8 @@ server:
   servlet: 
     session: 
       timeout: 30m
+  tomcat:
+    uri-encoding: UTF-8
 
 #运用名称
 spring: 
@@ -11,9 +13,48 @@ spring:
   output:
     ansi:
       enabled: always
+#Redis基本配置#
+  redis:
+    database: 0
+    host: 10.12.128.235
+    port: 6379
+    timeout: 100000ms
+#lettuce线程池配置#
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+      shutdown-timeout: 1000ms
+#数据源配置#
+  datasource:
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: '123456'
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+#thymeleaf配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+#devtools热部署工具配置
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+  resources:
+    static-locations: classpath:static/
+#mybatis设置
+mybatis:
+  type-aliases-package: com.linmr.springboot.entity
+  mapper-locations: classpath:mapper/*.xml
+
 #默认启动debug模式
 debug: true
-
 logging:
   config: classpath:logback-dev.xml
   #root: debug
