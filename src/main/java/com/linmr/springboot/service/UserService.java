@@ -28,4 +28,6 @@ public interface UserService {
      * 获取用户列表
      */
     List<User> getUserList();
+
+    int addUser(User user);
 }

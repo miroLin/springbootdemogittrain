@@ -39,4 +39,6 @@ public interface UserDao {
      * @return 用户列表
      */
     List<User> listUsers();
+
+    int addUser(User user);
 }

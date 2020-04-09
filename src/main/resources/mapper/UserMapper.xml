@@ -13,4 +13,8 @@
     <select id="listUsers" resultMap="User">
       select * from user;
     </select>
+
+    <insert id="addUser" parameterType="User">
+        INSERT user(USERNAME, PASSWORD) VALUES (#{username},#{password});
+    </insert>
 </mapper>

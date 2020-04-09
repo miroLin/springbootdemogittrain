@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -42,14 +43,19 @@ public class UserController {
     public String findUserById(Integer id, Model model){
         User user = this.userService.find(id);
         log.info("当前查找到用户信息：" + user.toString());
-        model.addAttribute("user",user);
+        model.addAttribute("users",user);
         return "show";
     }
 
     @GetMapping(path = "/show/list")
     public String getUserList(Model model){
         List<User> users = this.userService.getUserList();
-        model.addAttribute("user",users.get(0));
+        model.addAttribute("users",users);
         return "show";
+    }
+    @PostMapping(path = "/add")
+    public String addUser(User user){
+       int num = this.userService.addUser(user);
+        return num>0?"redirect:show":"redirect:index";
     }
 }

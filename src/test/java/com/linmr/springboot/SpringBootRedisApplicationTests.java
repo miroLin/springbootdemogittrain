@@ -11,13 +11,13 @@ import org.springframework.data.redis.core.RedisTemplate;
  * @date 2020-3-17  14:37
  */
 @SpringBootTest
-public class SpringBootRedisApplicationTests {
+class SpringBootRedisApplicationTests {
 
     @Autowired
     private RedisTemplate<String, String> strRedisTemplate;
 
     @Test
-    public void testString() {
+    void testString() {
         strRedisTemplate.opsForValue().set("strKey","测试操作……");
         System.out.println(strRedisTemplate.opsForValue().get("strKey"));
         System.out.println(strRedisTemplate.opsForValue().get("hostname"));

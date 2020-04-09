@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author linmr
  * @version 1.0
  * @date 2020-2-27  9:03
+ * @since 1.8
  */
 @RestController
 public class HelloController {

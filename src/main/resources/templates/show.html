@@ -13,11 +13,13 @@
         <th>姓名</th>
         <th>密码</th>
     </tr>
-    <tr>
+    <tr th:each="user:${users}">
         <td th:text="${user.id}"></td>
         <td th:text="${user.username}"></td>
         <td th:text="${user.password}"></td>
     </tr>
+
+
 </table>
 </body>
 </html>
